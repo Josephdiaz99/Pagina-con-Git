@@ -52,8 +52,7 @@ header{
 
 main{
     height: 100%;
-    margin: 0 60px 0 60px;
-    margin-top: 20px;
+    margin: 20px 60px;
 }
 h2{
     text-align: center;
@@ -95,4 +94,20 @@ h2{
     text-decoration: none;
     font-size: 40px;
     color:#ffe100;
+}
+
+/*Footer*/
+
+.footer__container{
+    background-color: #ffe100;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.names{
+    font-weight: 100;
+    
 }
