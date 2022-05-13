@@ -1,14 +1,14 @@
 "use strict"
 
 const d = document,
- $main = d.querySelector("main"),
- $links = d.querySelector(".links");
-
+ $cardContainer = d.querySelector(".cards__container"),
+ $links = d.querySelector(".links"),
+$template=d.querySelector('template')
  let pokeAPI = "https://pokeapi.co/api/v2/pokemon/";
 
  async function loadPokemons (url) {
      try {
-        $main.innerHTML = `<img class="loader" src="app/assets/oval.svg" alt="Cargando...">`;
+        $cardContainer.innerHTML = `<img class="loader" src="app/assets/oval.svg" alt="Cargando...">`;
 
          let res = await fetch(url),
           json = await res.json(),
@@ -25,14 +25,17 @@ const d = document,
 
                   if (!res.ok) 
                    throw { status: res.status, statusText: res.statusText };
-
+                
                    $template += `
-                   <figure>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+                     <div class="card__container">
+                      <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" >
+                      <div class="text__container">
                     <figcaption>${pokemon.name}</figcaption>
-                   </figure>
+                      </div>
+                      </div>
                    `;
               } catch (err) {
+                  
                   let message = err.statusText || "Ocurrio un error";
                   $template += `
                     <figure>
@@ -42,13 +45,14 @@ const d = document,
               }
           } //Acaba el ciclo for
          
-        $main.innerHTML = $template;
-        $prevLink = json.previous ? `<a href="${json.previous}">⏮️</a>` :  "";
-        $nextLink = json.next ? `<a href="${json.next}">⏭️</a>` : "";
+        $cardContainer.innerHTML = $template;
+        $prevLink = json.previous ? `<a href="${json.previous}">&#11013;&#65039;</a>` :  "";
+        $nextLink = json.next ? `<a href="${json.next}">&#10145;&#65039;</a>` : "";
         $links.innerHTML = $prevLink + " " + $nextLink;
      } catch (err) {
+        console.log(err)
          let message = err.statusText || "Ocurrio un error";
-         $main.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+         $cardContainer.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
      }
  }
 

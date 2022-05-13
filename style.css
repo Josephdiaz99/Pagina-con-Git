@@ -51,7 +51,7 @@ header{
 /*Main*/
 
 main{
-    height: 100vh;
+    height: 100%;
     margin: 0 60px 0 60px;
     margin-top: 20px;
 }
@@ -75,6 +75,7 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 .card__container img{
@@ -83,5 +84,9 @@ h2{
 }
 .text__container{
     font-weight: bold;
+    text-align: center;
+}
+
+.links{
     text-align: center;
 }
