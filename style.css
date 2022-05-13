@@ -2,4 +2,86 @@
     box-sizing: border-box;
     margin: 0;
     padding:0;
+    font-family: 'Quicksand', sans-serif;
+font-family: 'Roboto Flex', sans-serif;
+overflow-x: hidden;
+}
+
+*:before,*:after{
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    overflow-x:hidden ;
+
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    background-color:#ffff00;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.trueno{
+    color: red;
+}
+
+.nav__header{
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    gap: 30px;
+  
+}
+.nav__header li:hover{
+    opacity: .55;
+}
+/*Main*/
+
+main{
+    height: 100vh;
+    margin: 0 60px 0 60px;
+    margin-top: 20px;
+}
+h2{
+    text-align: center;
+    margin-bottom:20px ;
+}
+.cards__container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card__container{
+    display: flex;
+    width: 200px;
+    height: 250px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card__container img{
+    width: 200px;
+    height: 200px;
+}
+.text__container{
+    font-weight: bold;
+    text-align: center;
 }
