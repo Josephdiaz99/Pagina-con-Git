@@ -90,3 +90,9 @@ h2{
 .links{
     text-align: center;
 }
+
+.links a{
+    text-decoration: none;
+    font-size: 40px;
+    color:#ffe100;
+}
