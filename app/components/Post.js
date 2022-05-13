@@ -4,11 +4,11 @@ const d = document,
  $main = d.querySelector("main"),
  $links = d.querySelector(".links");
 
- let url = "https://pokeapi.co/api/v2/pokemon/";
+ let pokeAPI = "https://pokeapi.co/api/v2/pokemon/";
 
  async function loadPokemons (url) {
      try {
-        $main.innerHTML = `<img class="loader" src="../assets/oval.svg" alt="Cargando...">`;
+        $main.innerHTML = `<img class="loader" src="app/assets/oval.svg" alt="Cargando...">`;
 
          let res = await fetch(url),
           json = await res.json(),
@@ -28,7 +28,7 @@ const d = document,
 
                    $template += `
                    <figure>
-                    <img src="${pokemon.sprites.front.default}" alt="${pokemon.name}">
+                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
                     <figcaption>${pokemon.name}</figcaption>
                    </figure>
                    `;
@@ -52,6 +52,11 @@ const d = document,
      }
  }
 
- d.addEventListener("DOMContentLoaded", (e) => loadPokemons());
+ d.addEventListener("DOMContentLoaded", (e) => loadPokemons(pokeAPI));
 
-    
+d.addEventListener("click", e => {
+    if (e.target.matches(".links a")) {
+        e.preventDefault();
+        loadPokemons(e.target.getAttribute("href"));
+    }
+});
