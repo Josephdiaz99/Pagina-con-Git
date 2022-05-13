@@ -60,5 +60,3 @@ d.addEventListener("click", e => {
         loadPokemons(e.target.getAttribute("href"));
     }
 });
-
-console.log("hola")
