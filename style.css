@@ -7,12 +7,44 @@ font-family: 'Roboto Flex', sans-serif;
 overflow-x: hidden;
 }
 
-header{
+*:before,*:after{
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    overflow-x:hidden ;
 
-    padding-top: 20px;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
     text-align: center;
     background-color:#ffff00;
     height: 100px;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 
+.trueno{
+    color: red;
+}
+
+.nav__header{
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    gap: 30px;
+  
+}
+.nav__header li:hover{
+    opacity: .55;
+}
